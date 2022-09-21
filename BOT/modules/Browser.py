@@ -370,7 +370,7 @@ class Browser:
             .until(EC.presence_of_all_elements_located(locator))
         except:
             print('HTML element not located. Shutting down.')
-            sys.exit()
+            return None
 
         return None
     
