@@ -88,7 +88,7 @@ if __name__ == "__main__":
     # Check if it's time to start
     print('Checking the hour...')
     now = datetime.now()
-    init_hour = datetime.now().replace(hour=19, minute=00, 
+    init_hour = datetime.now().replace(hour=10, minute=00, 
                                        second=0, microsecond=0)
     diff = init_hour - now
     # Remove some seconds in order to improve performance
