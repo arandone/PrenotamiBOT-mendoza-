@@ -5,7 +5,7 @@ class PrenotamiWebPage:
 
         self.__check_args(service, str)
         self._url = 'https://prenotami.esteri.it/Language/ChangeLanguage?lang=2'
-        self._services = ['direct_son', 'reconstruction', 'passport', 'notarial']
+        self._services = ['direct_son', 'reconstruction', 'passport', 'anagrafe', 'marriage']
 
         if service not in self._services:
             print('Please, enter a valid service name.')
@@ -23,7 +23,7 @@ class PrenotamiWebPage:
             },
             'direct_son': {
                 'BY': 'XPATH', # How to locate the elements
-                'SERVICE_BUTTON': '//*[@id="dataTableServices"]/tbody/tr[1]/td[4]/a/button',
+                'SERVICE_BUTTON': '//*[@id="dataTableServices"]/tbody/tr[2]/td[4]/a/button',
                 'PARENT_NAME': '//*[@id="DatiAddizionaliPrenotante_0___testo"]',
                 'BIRTH_PLACE': '//*[@id="DatiAddizionaliPrenotante_1___testo"]',
                 'BIRTH_DATE': '//*[@id="DatiAddizionaliPrenotante_2___data"]', # DD/MM/YYYY
@@ -34,14 +34,14 @@ class PrenotamiWebPage:
             },
             'reconstruction': {
                 'BY': 'XPATH', # How to locate the elements
-                'SERVICE_BUTTON': '//*[@id="dataTableServices"]/tbody/tr[3]/td[4]/a/button',
+                'SERVICE_BUTTON': '//*[@id="dataTableServices"]/tbody/tr[4]/td[4]/a/button',
                 'NOTES': '//*[@id="BookingNotes"]',
                 'CHECKBOX': '//*[@id="PrivacyCheck"]',
                 'SUBMIT': '//*[@id="btnAvanti"]'
             },
             'passport': {
                 'BY': 'XPATH', # How to locate the elements
-                'SERVICE_BUTTON': '//*[@id="dataTableServices"]/tbody/tr[2]/td[4]/a/button',
+                'SERVICE_BUTTON': '//*[@id="dataTableServices"]/tbody/tr[5]/td[4]/a/button',
                 'SECURITY_CODE': '//*[@id="DatiAddizionaliPrenotante_0___testo"]',
                 'NOTES': '//*[@id="BookingNotes"]',
                 'CHECKBOX': '//*[@id="PrivacyCheck"]',
@@ -59,9 +59,16 @@ class PrenotamiWebPage:
                 'SUBMIT': '/html/body/main/div[2]/div/div[2]/button'
 
             },
-            'notarial': {
+            'anagrafe': {
                 'BY': 'XPATH', # How to locate the elements
-                'SERVICE_BUTTON': '//*[@id="dataTableServices"]/tbody/tr[4]/td[4]/a/button',
+                'SERVICE_BUTTON': '//*[@id="dataTableServices"]/tbody/tr[1]/td[4]/a/button',
+                'NOTES': '//*[@id="BookingNotes"]',
+                'CHECKBOX': '//*[@id="PrivacyCheck"]',
+                'SUBMIT': '//*[@id="btnAvanti"]'
+            },
+            'marriage': {
+                'BY': 'XPATH', # How to locate the elements
+                'SERVICE_BUTTON': '//*[@id="dataTableServices"]/tbody/tr[3]/td[4]/a/button',
                 'NOTES': '//*[@id="BookingNotes"]',
                 'CHECKBOX': '//*[@id="PrivacyCheck"]',
                 'SUBMIT': '//*[@id="btnAvanti"]'
