@@ -9,71 +9,28 @@ It's coded in Python, with the Selenium package for web scraping.
 ```
 $ git clone https://github.com/hvignolo87/tito.git
 ```
-2. Create a file inside the **BOT** folder, named *user_data.ini*, with the following structure:
-```
-[PRENOTAMI_DATA]
-# The Prenot@mi email
-email = <your email here>
 
-# The Prenot@mi password
-pass = <you password here>
-
-# The required service. Chose one of this options: reconstruction, direct_son, passport, notarial.
-service = notarial
-
-# Number of seconds to wait for OTP code insertion by user.
-# In case that your service doesn't require an OTP code, ignore it.
-# WARNING: never leave it in blank.
-otp_delay = 10
-
-
-# Form data
-[RECONSTRUCTION]
-# Insert notes for the embassy, if needed
-NOTES = <notes here>
-
-# Form data
-[DIRECT_SON]
-PARENT_NAME = <AVO's name>
-BIRTH_PLACE = <AVO's birth place>
-BIRTH_DATE = <AVO's birth date [DD/MM/YYYY]>
-ADDRESS = <AVO's address>
-
-# Insert notes for the embassy, if needed
-NOTES = <notes here>
-
-# Form data
-[PASSPORT]
-# Insert notes for the embassy, if needed
-NOTES = <notes here>
-
-# Form data
-[NOTARIAL]
-# Insert notes for the embassy, if needed
-NOTES = <notes here>
-```
-
-3. Fill the **email**, **pass** and **service** fields with your data, then go to the selected service section and fill the form data. Also fill the **otp_delay** parameter (see point 5 below). For example:
+2. Fill in **user_data.ini** the **email**, **pass** and **service** fields with your data, then go to the selected service section and fill the form data. Also fill the **otp_delay** parameter (see point 5 below). For example:
 ```
 [PRENOTAMI_DATA]
 email = johndoe@gmail.com
 pass = JohnDoe
-service = notarial
+service = anagrafe
 otp_delay = 10
 
-[NOTARIAL]
+[ANAGRAFE]
 NOTES = This is a note for the embassy.
 ```
 
-4. Open a CLI (bash, powershell) and navigate to the **BOT** folder with the *cd* command. Once there, copy&paste the following command:
+3. Open a CLI (bash, powershell) and navigate to the **BOT** folder with the *cd* command. Once there, copy&paste the following command:
 ```
 python main.py
 ```
 
-5. Depending on the selected service, the script runs until the OTP code is required (this depends on the location of the selected embassy). Once the popup window shows, you need to enter it manually. **Don't click OK once inserted the code, just wait**.
+4. Depending on the selected service, the script runs until the OTP code is required (this depends on the location of the selected embassy). Once the popup window shows, you need to enter it manually. **Don't click OK once inserted the code, just wait**.
 You'll need to play with the *otp_delay* parameter in order to adjust it as minimum as possible. Start with 10s.
 
-6. Enjoy.
+5. Enjoy.
 
 ## Future improvings
 - [x] Develop a user-friendly web interface with Flask.
