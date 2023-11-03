@@ -7,7 +7,7 @@ It's coded in Python, with the Selenium package for web scraping.
 
 1. Clone this repository in your computer. For this, open a Git bash, navigate to the directory where you want the cloned repository to be added, and copy&paste the following command:
 ```
-$ git clone https://github.com/hvignolo87/tito.git
+$ git clone https://github.com/arandone/PrenotamiBOT-mendoza-.git
 ```
 
 2. Fill in **user_data.ini** the **email**, **pass** and **service** fields with your data, then go to the selected service section and fill the form data. Also fill the **otp_delay** parameter (see point 5 below). For example:
